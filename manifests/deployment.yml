@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: seangzazuredevops 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: seangzazuredevops 
+    spec:
+      containers:
+        - name: seangzazuredevops 
+          image: twistlocktest.azurecr.io/seangzazuredevops
+          ports:
+          - containerPort: 80
