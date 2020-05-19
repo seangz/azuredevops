@@ -30,4 +30,4 @@ stages:
     - bash: |
         curl -k -O -u sean:foobar $TL_CONSOLE/api/v1/util/twistcli
         chmod a+x twistcli
-        ./twistcli images scan --address $TL_CONSOLE -u sean -p foobar $(tag)
+        ./twistcli images scan --address $TL_CONSOLE -u sean -p foobar --details $(tag)
