@@ -8,7 +8,6 @@ trigger:
 resources:
 - repo: self
 
-variables:
 
 stages:
 - stage: Build
