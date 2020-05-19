@@ -9,7 +9,6 @@ resources:
 - repo: self
 
 variables:
-  tag: '$(Build.BuildId)'
 
 stages:
 - stage: Build
@@ -26,9 +25,7 @@ stages:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         repository: twistlock/test
-        tags: |
-          $(tag)
     - bash: |
         curl -k -O -u sean:foobar $TL_CONSOLE/api/v1/util/twistcli
         chmod a+x twistcli
-        ./twistcli images scan --address $TL_CONSOLE -u sean -p foobar --details $(repository):$(tag)
+        ./twistcli images scan --address $TL_CONSOLE -u sean -p foobar --details 
